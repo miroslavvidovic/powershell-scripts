@@ -1,9 +1,8 @@
 ﻿
-$ArrComputers =  "selekovic"
+$ArrComputers =  "127.0.0.1"
 
 Clear-Host
-foreach ($Computer in $ArrComputers) 
-{
+foreach ($Computer in $ArrComputers) {
     $System = get-wmiobject Win32_ComputerSystem -Computer $Computer
     $computerName = $System.DNSHostName
     $computerManufacturer = $System.Manufacturer
