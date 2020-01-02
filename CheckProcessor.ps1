@@ -41,4 +41,4 @@ PROCESS {
 }}
 
 
-get-cputype "apavlovic"
+get-cputype -computername "127.0.0.1"

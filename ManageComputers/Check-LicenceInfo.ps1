@@ -8,10 +8,6 @@
     Check the licence status based on an ip address
     Get-LicenceStatus -computername "MyComputerName"
     Check the licence status based on a computername
-.INPUTS
-    Inputs (if any)
-.OUTPUTS
-    Output (if any)
 .NOTES
     Author: Miroslav Vidovic - miroslav-vidovic@hotmail.com
     Tested on: Powershell 5.1
@@ -37,8 +33,8 @@ function Get-LicenceStatus {
     )
     PROCESS {
         Get-WmiObject SoftwareLicensingProduct -ComputerName $computername |
-        where {$_.PartialProductKey} | 
-        select PSComputerName, Name, ApplicationId,
+        Where-Object {$_.PartialProductKey} | 
+        Select-Object PSComputerName, Name, ApplicationId,
         @{N="LicenseStatus"; E={$lstat["$($_.LicenseStatus)"]} } 
 }}
 

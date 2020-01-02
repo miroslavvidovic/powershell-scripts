@@ -7,10 +7,6 @@
     Get-FirewallState
     Disable-Firewall
     Enable-Firewall
-.INPUTS
-    Inputs (if any)
-.OUTPUTS
-    Output (if any)
 .NOTES
     Author: Miroslav Vidovic - miroslav-vidovic@hotmail.com 
     Tested on: Powershell 5.1
@@ -24,7 +20,7 @@ function Get-FirewallState{
 
     process{
         Get-NetFirewallProfile |
-        Select Name, Enabled
+        Select-Object Name, Enabled
     }
 }
 

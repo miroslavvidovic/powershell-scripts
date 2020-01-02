@@ -35,4 +35,4 @@ else {$timename = $tz.StandardName}
  "UTC   Time  : $utc"
 }}
 
-test-systemtime "server2"
+test-systemtime "127.0.0.1"

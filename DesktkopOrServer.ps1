@@ -13,10 +13,10 @@ ConvertFrom-StringData -StringData @'
 }
 
 
-function get-computertype {
-[CmdletBinding()]
-param (
- [parameter(ValueFromPipeline=$true,
+function Get-ComputerType {
+    [CmdletBinding()]
+  param (
+  [parameter(ValueFromPipeline=$true,
    ValueFromPipelineByPropertyName=$true)]
  [string]$computername="$env:COMPUTERNAME"
 )

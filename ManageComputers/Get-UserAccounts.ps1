@@ -8,10 +8,6 @@
     User accounts from a pc based on IP address
     Get-UserAccounts -computername "MyComputerName"
     User accounts from a pc based on computer name
-.INPUTS
-    Inputs (if any)
-.OUTPUTS
-    Output (if any)
 .NOTES
     Author: Miroslav Vidovic - miroslav-vidovic@hotmail.com
     Tested on: Powershell 5.1
@@ -26,7 +22,7 @@ function Get-UserAccounts{
     )
 PROCESS{
     Get-WmiObject -Class Win32_UserAccount -ComputerName $computername |
-    select AccountType, Description, Disabled, Domain, FullName,
+    Select-Object AccountType, Description, Disabled, Domain, FullName,
     InstallDate, LocalAccount, Lockout, Name, PasswordChangeable,
     PasswordExpires, PasswordRequired, SID, SIDType 
 }}

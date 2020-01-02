@@ -24,4 +24,4 @@ PNPDeviceID, ProviderType, MaxBaudRate
   -ComputerName $computername | Select Name, PNPDeviceID
 }}
 
-get-port "spantic"
+get-port "127.0.0.1"

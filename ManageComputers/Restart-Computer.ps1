@@ -7,8 +7,6 @@
     PS C:\> <example usage>
     restart-PC -computername "192.168.15.2"
     restart-PC -computername "MyComputerName"
-.INPUTS
-.OUTPUTS
 .NOTES
     Author: Miroslav Vidovic - mrioslav-vidovic@hotmail.com
     Tested on: Powershell 5.1

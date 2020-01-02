@@ -1,23 +1,27 @@
 <#
 .SYNOPSIS
+    System info
 .DESCRIPTION
+    Display basic system information for multiple computer.
 .NOTES
-
-Script expects a comptuers.csv file in the following format:
-where the first row is the header
-Computer
-W08R2CS01
-W08R2CS02
-W08R2SQL08
-W08R2SQL08A
-WSS08
-DC02
+    Author: Miroslav Vidovic - miroslav-vidovic@hotmail.com
+    Tested on: Powershell 5.1
+.NOTES
+    Script expects a comptuers.csv file in the following format:
+    where the first row is the header
+    Computer
+    W08R2CS01
+    W08R2CS02
+    W08R2SQL08
+    W08R2SQL08A
+    WSS08
+    DC02
 #>
 
 Import-Csv computers.csv |
 foreach {
     $system = "" |
-    select Name, Make, Model, CPUs, Cores,
+    Select-Object Name, Make, Model, CPUs, Cores,
     LogProc, Speed, Memory, Windows, SP
 
     $server = Get-WmiObject -Class Win32_ComputerSystem `
